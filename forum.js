@@ -22,8 +22,24 @@ server.get('/api/post' , function(request, response, next){
 })
 
 server.post('/api/post', function(request, response, next){
-    console.log(request.body)
-    response.json(request.body)
+    // get the next available ID by adding one to the highest value found
+    var id = 0
+    posts.forEach(element => {
+        if (element.id > id) {
+            id = element.id
+        }
+    });
+    id++
+    // create a new post object
+    let post = {
+        id: id,
+        title: request.body.title,
+        content: request.body.content
+    }
+    // push that post onto the posts array
+    posts.push(post)
+    // return the post we just created
+    response.json(post)
 })
 
 server.listen(3000, function(){
