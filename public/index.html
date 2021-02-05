@@ -15,19 +15,20 @@
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-      <H1>  Dumb Questions</H1>
+    <div class="container">
+      <h1>  Dumb Questions</h1>
       <h2></h2>
       <div>
           <form> 
-              <label for="newTitle"> Whats your dumb Question: </label><br>
-              <input type="text" id="newTitle" name="newTitle"><br>
-              <label for="newPost">  dumb answers: </label><br>
-              <input type="text" id="newPost" name="newPost"><br>
+              <label for="title"> Whats your dumb Question: </label><br />
+              <input type="text" name="title"><br />
+              <label for="content">Dumb answers: </label><br />
+              <input type="text" name="content"><br />
               <input type="submit" value="Submit">
           </form>
       </div>
-      <div id="CPost"></div>
-      
+      <div id="CPost"></div>    
+    </div>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
